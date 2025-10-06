@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Underwater Object Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: #f0f8ff;
+            padding: 30px;
+        }
+        .container {
+            background: #fff;
+            padding: 20px;
+            margin: auto;
+            max-width: 500px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+        #preview {
+            display: block;
+            margin: 20px auto;
+            max-width: 300px;
+            max-height: 300px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+        }
+        .result {
+            margin-top: 15px;
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        button {
+            margin-top: 15px;
+            padding: 10px 20px;
+            font-size: 1em;
+            border: none;
+            border-radius: 8px;
+            background: #0077cc;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #005fa3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Underwater Object Detection</h1>
+
+        <!-- Upload form -->
+        <form method="POST" enctype="multipart/form-data">
+            <input type="file" name="image" accept="image/*" required onchange="previewImage(event)">
+            <br>
+            <button type="submit">Predict</button>
+        </form>
+
+        <!-- Preview before prediction OR after -->
+        {% if image_url %}
+            <img id="preview" src="{{ image_url }}" alt="Preview">
+        {% else %}
+            <img id="preview" src="#" alt="Preview" style="display:none;">
+        {% endif %}
+
+        <!-- Prediction result -->
+        {% if prediction %}
+            <div class="result">
+                Prediction: {{ prediction }}
+            </div>
+        {% endif %}
+    </div>
+
+    <script>
+        function previewImage(event) {
+            var output = document.getElementById('preview');
+            output.src = URL.createObjectURL(event.target.files[0]);
+            output.style.display = "block";
+        }
+    </script>
+</body>
+</html>
