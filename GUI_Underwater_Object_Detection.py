@@ -1,4 +1,4 @@
-  #latest
+
 ##########################REQUIRED LIBRARIES#############################
 # pip install numpy
 # pip install opencv-python
@@ -17,7 +17,7 @@ from tkinter import Tk, Button, Label, filedialog, Canvas
 from PIL import Image, ImageTk
 from sklearn.model_selection import train_test_split
 
-dir = "C:\\Users\\Acer\\Desktop\\projects\\Underwater Object Detection\\datasets_underwater_object\\train"
+dir = "datasets_underwater_object\\train"
 categories = ['fish', 'jellyfish', 'penguin','puffin', 'shark', 'starfish', 'stingray']
 data = []
 
@@ -68,7 +68,7 @@ root = Tk()
 root.title("Underwater Object Detection - Group 7")  # Added title and group information
 
 # Set background image
-background_image = Image.open("C:\\Users\\Acer\\Desktop\\projects\\background image.jpg")
+background_image = Image.open("background image.jpg")
 background_photo = ImageTk.PhotoImage(background_image)
 background_label = Label(root, image=background_photo)
 background_label.place(relx=0.5, rely=0.5, anchor="center")  # Center the background image
@@ -152,3 +152,4 @@ help_button.place(relx=0.05, rely=0.95, anchor="sw")  # Bottom-left corner
 result_label.place(relx=0.5, rely=0.75, anchor="center")  # Center the label
 # Run Tkinter main loop
 root.mainloop()
+
