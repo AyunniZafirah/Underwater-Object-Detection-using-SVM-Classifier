@@ -1,4 +1,4 @@
-# 🌊 Underwater Object Detection using SVM Classifier
+# 🌊 Aquatic Animals Detection using SVM Classifier
 
 This project is an **image classification system** that detects and identifies **7 types of aquatic animals** using a **Support Vector Machine (SVM)** classifier.  
 It was developed as part of a machine learning / computer vision project to explore how traditional ML models can be applied to real-world problems in underwater environments.  
@@ -22,5 +22,6 @@ These files are saved so users don’t need to reprocess or retrain every time, 
 ---
 
 ## 🌐 Applications
-- Automated underwater monitoring  
+- A reference project for beginners exploring image preprocessing + SVM
+- A prototype for simple image classification of underwater animals.
 - Educational purposes in computer vision and machine learning  
